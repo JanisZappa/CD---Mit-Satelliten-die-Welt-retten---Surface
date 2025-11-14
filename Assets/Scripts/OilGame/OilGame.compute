@@ -1,0 +1,63 @@
+﻿#include "UnityCG.cginc"
+#include "HLSLSupport.cginc"
+#pragma kernel Draw
+#pragma kernel Line
+#pragma kernel Erase
+
+StructuredBuffer<int> Canvas;
+StructuredBuffer<float4> Colors;
+RWTexture2D<float4> Result;
+RWTexture2D<float4> Eraser;
+int size;
+float3 cursor;
+float3 cursorB;
+#define substeps 64
+
+
+[numthreads(16,16,1)]
+void Draw (uint3 id : SV_DispatchThreadID)
+{
+    Result[id.xy] = Colors[Canvas[id.x + id.y * size]];
+}
+
+
+[numthreads(16,16,1)]
+void Line (uint3 id : SV_DispatchThreadID)
+{
+    float v = 0;
+    float v2 = 0;
+    float2 center = float2(id.x, id.y);
+    for(int x = -7; x < 8; x++)
+    for(int y = -7; y < 8; y++)
+    {
+        int checkX = max(0, min(size - 1, id.x + x));
+        int checkY = max(0, min(size - 1, id.y + y));
+        
+        int value = Canvas[checkX + checkY * size];
+        float dist = 1 - saturate(length(float2(checkX, checkY) - center) * .1);
+        v  = max(v, step(abs(value - 1.0), .01) * dist);
+        v2 = max(v2, step(abs(value - 3.0), .01) * dist);
+    }
+    
+    float4 goal = float4(1 - v, step(abs(Canvas[id.x +  id.y * size] - 2.0), .01), 1 - v2, step(abs(Canvas[id.x +  id.y * size] - 4.0), .01));
+    
+    Result[id.xy] = goal;//lerp(Result[id.xy], goal, unity_DeltaTime.z * 22.5);
+}
+
+
+[numthreads(16,16,1)]
+void Erase (uint3 id : SV_DispatchThreadID)
+{
+    float2 uv = float2(id.x * 1.0 / size, id.y * 1.0 / size);
+    
+    float v = 0;
+    float multi = 1.0 / (substeps - 1);
+    for(int i = 0; i < substeps; i++)
+    {
+        float3 c = lerp(cursor, cursorB, i * multi);
+        float2 dir = c - uv;
+        v = max(v, (1 - saturate(length(dir) * 90)) * c.z);
+    }
+    
+    Eraser[id.xy] = min(1, v + Eraser[id.xy].x * (1.0 - unity_DeltaTime.z * .25));
+}

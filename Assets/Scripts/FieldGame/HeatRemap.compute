@@ -1,0 +1,51 @@
+﻿#pragma kernel CSMain
+
+RWStructuredBuffer<float4> Pixels;
+StructuredBuffer<float4> Ramp;
+StructuredBuffer<float2> Ranges;
+
+uint width;
+uint count;
+
+
+float Dist(float4 color, float4 other)
+{
+    return abs(color.r - other.r) + 
+           abs(color.g - other.g) + 
+           abs(color.b - other.b);
+}
+    
+
+[numthreads(16,16,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    uint index = id.x + id.y * width;
+
+    float4 a = Pixels[index];
+            
+    float best = 10000;
+    float value = 0;
+
+    for (int e = 0; e < count; e++)
+    {
+        float dist = Dist(Ramp[e], a);
+        float l = step(dist, best);
+        best  = lerp(best, dist, l);
+        value = lerp(value, e, l);
+    }
+            
+    value *= 1.0 / (count - 1);
+    //value = saturate(saturate(value * 2 - 1));
+    
+    
+    float y = 1 - step(width / 2, id.y);
+    float x = step(width / 2, id.x);
+    float q = y * 2 + x;
+    
+    float2 range = Ranges[q];
+    
+    
+    value = step(range.x, value) * step(value, range.y);
+    value *=  step(.5, a.a);
+    Pixels[index] = value;
+}

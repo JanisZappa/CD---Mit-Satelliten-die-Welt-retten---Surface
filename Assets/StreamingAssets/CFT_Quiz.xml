@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CFT_Quiz>
+    <Questions>
+
+        <Question>
+            <QText>Gesellschaftliche Veränderungsprozesse profitieren meiner Meinung nach besonders von …
+        </QText>
+
+            <Answers>
+                <Answer>
+                    <AText>… Migration und Partizipation aller – Gesellschaft zusammen neu denken.</AText>
+                    <Value>0</Value>
+                </Answer>
+                <Answer>
+                    <AText>… rasantem technologischen aber nachhaltigem Fortschritt – Gesellschaft und Technologie entkoppeln.</AText>
+                    <Value>1</Value>
+                </Answer>
+                <Answer>
+                    <AText>… traditionellen Werten – bewährte Gesellschaftsstrukturen sorgen für Orientierung und Vertrautheit.</AText>
+                    <Value>2</Value>
+                </Answer>
+            </Answers>
+        </Question>
+
+        <Question>
+            <QText>Innovationsfähigkeit und Technologietransfer sind meiner Meinung nach bestimmt durch das Mindset …
+        </QText>
+
+            <Answers>
+                <Answer>
+                    <AText>… »Einsatz neuer Technologien erst nach sorgfältiger Prüfung hinsichtlich ihrer Nachhaltigkeit« – auch zu Lasten der Fortschritts-Geschwindigkeit.</AText>
+                    <Value>0</Value>
+                </Answer>
+                <Answer>
+                    <AText>… »Die Grenzen des Möglichen verschieben« – neue Technologien schnellstmöglich in die Anwendung bringen.</AText>
+                    <Value>1</Value>
+                </Answer>
+                <Answer>
+                    <AText>… »Einsatz von Technologien nur mit erprobten, verlässlichen Erfahrungswerten« – absichern ggü. Risiken und Folgen.</AText>
+                    <Value>2</Value>
+                </Answer>
+            </Answers>
+        </Question>
+
+        <Question>
+            <QText>Die Transformation der Wirtschaft erfolgt meiner Meinung nach nur …
+        </QText>
+
+            <Answers>
+                <Answer>
+                    <AText>… politikgesteuert, nachhaltig und unabhängig – alles hat seinen Preis.</AText>
+                    <Value>0</Value>
+                </Answer>
+                <Answer>
+                    <AText>… ambitioniert, marktwirtschaftlich und kosteneffizient – Leistung zahlt sich aus.</AText>
+                    <Value>1</Value>
+                </Answer>
+                <Answer>
+                    <AText>… sparsam, bedacht und sukzessiv – durch Weiternutzung bestehender (Infra-)Strukturen.</AText>
+                    <Value>2</Value>
+                </Answer>
+            </Answers>
+        </Question>
+
+        <Question>
+            <QText>Der richtige Umgang mit der Klimakrise erfordert meiner Meinung nach die Einstellung …
+        </QText>
+
+            <Answers>
+                <Answer>
+                    <AText>… Umwelt- und Klimaschutz haben oberste Priorität – Nachhaltige Transformation ist die beste Klimakrisenprävention.</AText>
+                    <Value>0</Value>
+                </Answer>
+                <Answer>
+                    <AText>… Umwelt- und Klimaschutz sind wichtig – Der Geldbeutel darf jedoch nicht zu stark belastet werden.</AText>
+                    <Value>1</Value>
+                </Answer>
+                <Answer>
+                    <AText>… Umwelt- und Klimaschutz sind zwar notwendig – Einige Herausforderungen sind aber drängender und müssen zuerst angegangen werden.</AText>
+                    <Value>2</Value>
+                </Answer>
+            </Answers>
+        </Question>
+
+        <Question>
+            <QText>Die gesellschaftliche Sicherheit wird meiner Meinung nach gewährleistet durch …
+        </QText>
+
+            <Answers>
+                <Answer>
+                    <AText>… Kooperation: Transparenz, Kommunikation und gegenseitige Unterstützung.</AText>
+                    <Value>0</Value>
+                </Answer>
+                <Answer>
+                    <AText>… Koordination: Kontrolle zwischen unabhängigen Teamplayern.</AText>
+                    <Value>1</Value>
+                </Answer>
+                <Answer>
+                    <AText>… Eigenständigkeit: Eigene Sicherheit hat Priorität, notwendige Kompromisse werden aber eingegangen.</AText>
+                    <Value>2</Value>
+                </Answer>
+            </Answers>
+        </Question>
+
+          
+    </Questions>
+</CFT_Quiz>

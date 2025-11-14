@@ -1,0 +1,4 @@
+TimeUntilIdle 1000
+California-GameLength 600
+Oil_Multiplayer-GameLength 120
+LanguageSwitch 1

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CFT_Quiz>
+    <Questions>
+
+        <Question>
+            <QText>Gesellschaftliche Veränderungsprozesse profitieren meiner Meinung nach besonders von …</QText>
+            <QText_EN>In my opinion, social change processes benefit particularly from …</QText_EN>
+
+            <Answers>
+                <Answer>
+                    <AText>… Migration und Partizipation aller – Gesellschaft zusammen neu denken.</AText>
+                    <AText_EN>...migration and the participation of everyone – rethinking society together.</AText_EN>
+                    <Value>0</Value>
+                </Answer>
+                <Answer>
+                    <AText>… rasantem technologischen aber nachhaltigem Fortschritt – Gesellschaft und Technologie entkoppeln.</AText>
+                    <AText_EN>...rapid but sustainable technological progress – decoupling society and technology.</AText_EN>
+                    <Value>1</Value>
+                </Answer>
+                <Answer>
+                    <AText>… traditionellen Werten – bewährte Gesellschaftsstrukturen sorgen für Orientierung und Vertrautheit.</AText>
+                    <AText_EN>...traditional values – proven social structures provide orientation and familiarity.</AText_EN>
+                    <Value>2</Value>
+                </Answer>
+            </Answers>
+        </Question>
+
+        <Question>
+            <QText>Innovationsfähigkeit und Technologietransfer sind meiner Meinung nach bestimmt durch das Mindset …</QText>
+            <QText_EN>In my opinion, innovation capacity and technology transfer are determined by the mindset …</QText_EN>
+
+            <Answers>
+                <Answer>
+                    <AText>… »Einsatz neuer Technologien erst nach sorgfältiger Prüfung hinsichtlich ihrer Nachhaltigkeit« – auch zu Lasten der Fortschritts-Geschwindigkeit.</AText>
+                    <AText_EN>...»use new technologies only after careful consideration of their sustainability« - also at the expense of the speed of progress.</AText_EN>
+                    <Value>0</Value>
+                </Answer>
+                <Answer>
+                    <AText>… »Die Grenzen des Möglichen verschieben« – neue Technologien schnellstmöglich in die Anwendung bringen.</AText>
+                    <AText_EN>...»pushing the boundaries of what is possible« - bringing new technologies into application as quickly as possible.</AText_EN>
+                    <Value>1</Value>
+                </Answer>
+                <Answer>
+                    <AText>… »Einsatz von Technologien nur mit erprobten, verlässlichen Erfahrungswerten« – absichern ggü. Risiken und Folgen.</AText>
+                    <AText_EN>...»only use technologies with proven, reliable empirical values« –  safeguard against risks and consequences.</AText_EN>
+                    <Value>2</Value>
+                </Answer>
+            </Answers>
+        </Question>
+
+        <Question>
+            <QText>Die Transformation der Wirtschaft erfolgt meiner Meinung nach nur …</QText>
+            <QText_EN>In my opinion, economic transformation only takes place …</QText_EN>
+
+            <Answers>
+                <Answer>
+                    <AText>… politikgesteuert, nachhaltig und unabhängig – alles hat seinen Preis.</AText>
+                    <AText_EN>...in a policy-driven, sustainable and independent manner – everything has its cost.</AText_EN>
+                    <Value>0</Value>
+                </Answer>
+                <Answer>
+                    <AText>… ambitioniert, marktwirtschaftlich und kosteneffizient – Leistung zahlt sich aus.</AText>
+                    <AText_EN>...in an ambitious, market-based and cost-efficient manner - performance pays off.</AText_EN>
+                    <Value>1</Value>
+                </Answer>
+                <Answer>
+                    <AText>… sparsam, bedacht und sukzessiv – durch Weiternutzung bestehender (Infra-)Strukturen.</AText>
+                    <AText_EN>...sparingly, thoughtfully and gradually - by continued use of existing (infra-)structures.</AText_EN>
+                    <Value>2</Value>
+                </Answer>
+            </Answers>
+        </Question>
+
+        <Question>
+            <QText>Der richtige Umgang mit der Klimakrise erfordert meiner Meinung nach die Einstellung …</QText>
+            <QText_EN>In my opinion, the right way to deal with the climate crisis requires an attitude …</QText_EN>
+
+            <Answers>
+                <Answer>
+                    <AText>… Umwelt- und Klimaschutz haben oberste Priorität – Nachhaltige Transformation ist die beste Klimakrisenprävention.</AText>
+                    <AText_EN>...that environmental and climate protection have top priority - sustainable transformation is the best way of climate crisis prevention.</AText_EN>
+                    <Value>0</Value>
+                </Answer>
+                <Answer>
+                    <AText>… Umwelt- und Klimaschutz sind wichtig – Der Geldbeutel darf jedoch nicht zu stark belastet werden.</AText>
+                    <AText_EN>...that environmental and climate protection are important - but the wallet must not be overburdened.</AText_EN>
+                    <Value>1</Value>
+                </Answer>
+                <Answer>
+                    <AText>… Umwelt- und Klimaschutz sind zwar notwendig – Einige Herausforderungen sind aber drängender und müssen zuerst angegangen werden.</AText>
+                    <AText_EN>...that environmental and climate protection are necessary - but some challenges are more pressing and must be tackled first.</AText_EN>
+                    <Value>2</Value>
+                </Answer>
+            </Answers>
+        </Question>
+
+        <Question>
+            <QText>Die gesellschaftliche Sicherheit wird meiner Meinung nach gewährleistet durch …</QText>
+            <QText_EN>In my opinion, social security is guaranteed by …</QText_EN>
+
+            <Answers>
+                <Answer>
+                    <AText>… Kooperation: Transparenz, Kommunikation und gegenseitige Unterstützung.</AText>
+                    <AText_EN>...cooperation: transparency, communication and mutual support.</AText_EN>
+                    <Value>0</Value>
+                </Answer>
+                <Answer>
+                    <AText>… Koordination: Kontrolle zwischen unabhängigen Teamplayern.</AText>
+                    <AText_EN>...coordination: control between independent team players.</AText_EN>
+                    <Value>1</Value>
+                </Answer>
+                <Answer>
+                    <AText>… Eigenständigkeit: Eigene Sicherheit hat Priorität, notwendige Kompromisse werden aber eingegangen.</AText>
+                    <AText_EN>...autonomy: personal security is a priority, but necessary compromises are made.</AText_EN>
+                    <Value>2</Value>
+                </Answer>
+            </Answers>
+        </Question>
+
+          
+    </Questions>
+</CFT_Quiz>

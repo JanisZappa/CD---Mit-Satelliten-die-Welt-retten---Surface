@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a75633eaa6887354986ad66d5f692df6, type: 3}
+  m_Name: SafariSettings
+  m_EditorClassIdentifier: 
+  settings:
+  - elephants: 3
+    zebras: 2
+    receivers: 0
+    activeMarkers: 0
+    certainty: 0
+  - elephants: 3
+    zebras: 2
+    receivers: 1
+    activeMarkers: 0
+    certainty: 0
+  - elephants: 4
+    zebras: 1
+    receivers: 1
+    activeMarkers: 1
+    certainty: 1
+  - elephants: 5
+    zebras: 0
+    receivers: 1
+    activeMarkers: 1
+    certainty: 2
+  - elephants: 3
+    zebras: 2
+    receivers: 0
+    activeMarkers: 0
+    certainty: 0
+  - elephants: 4
+    zebras: 1
+    receivers: 0
+    activeMarkers: 1
+    certainty: 1
+  - elephants: 5
+    zebras: 0
+    receivers: 0
+    activeMarkers: 1
+    certainty: 2
+  - elephants: 0
+    zebras: 0
+    receivers: 0
+    activeMarkers: 0
+    certainty: 0

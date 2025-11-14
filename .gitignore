@@ -97,3 +97,9 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+Assets/Scenarios/Safari/Car/Items.bytes
+Assets/Scenarios/Safari/Car/Items.bytes.meta
+Assets/Scenarios/Safari/Video/GAIA in a nutshell.mp4
+Assets/Scenarios/Safari/Video/GAIA in a nutshell.mp4.meta
+Assets/Scenarios/Safari/Video/GAIA in a nutshell_EN.mp4
+Assets/Scenarios/Safari/Video/GAIA in a nutshell_EN.mp4.meta

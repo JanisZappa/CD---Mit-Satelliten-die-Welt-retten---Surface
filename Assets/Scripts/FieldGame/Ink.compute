@@ -1,0 +1,139 @@
+﻿#pragma kernel init
+#pragma kernel add
+#pragma kernel update
+#pragma kernel cursorupdate
+#pragma kernel count
+
+RWStructuredBuffer<float> values;
+RWStructuredBuffer<float> smoothvalues;
+RWStructuredBuffer<float> vel;
+uniform RWTexture2D<float4> rT;
+
+int size;
+float4 cursor;
+float4 cursorB;
+
+struct cData
+{
+    float2 pos, vel;
+    float pressure;
+    float id;
+};
+
+RWStructuredBuffer<cData> cursorData;
+RWStructuredBuffer<float4> brushes;
+float dt;
+
+#define substeps 32
+#define substeps2 64
+
+RWStructuredBuffer<int> ValueCounter;
+sampler2D mask;
+
+
+[numthreads(1,1,1)]
+void cursorupdate (uint3 id : SV_DispatchThreadID)
+{
+    for(int e = 0; e < 2; e++)
+    {
+        cData data = cursorData[e];
+        float2 p = data.pos;
+        float2 v = data.vel;
+        
+        float cursordt = dt / substeps;
+        
+        float multi = 1.0 / (substeps - 1);
+        
+        int offset = e * substeps;
+        
+        float4 curs = lerp(cursor, cursorB, e);
+        
+        float newPress = 1 - step(.5, abs(data.pressure)) * step(.5, abs(curs.z));// * (1 - step(abs(data.pressure;
+        
+        for(int i = 0; i < substeps; i++)
+        {
+            v *= 1.0 - 100 * cursordt;
+            
+            v += (curs.xy - p) * cursordt;
+            
+            p += v * 2000 * cursordt;
+            
+            brushes[i + offset] = float4(lerp(p, curs.xy, newPress), data.pressure, data.id);
+        }
+        
+        data.pos = lerp(p, curs.xy, newPress);
+        data.vel = lerp(v, float2(0, 0), newPress);
+        data.pressure = curs.z;
+        data.id = curs.w;
+        
+        cursorData[e] = data;
+    }
+}
+
+
+[numthreads(16,16,1)]
+void init (uint3 id : SV_DispatchThreadID)
+{
+    uint index = id.x + id.y * size;
+    values[index] = 0;
+    smoothvalues[index] = 0;
+}
+
+
+[numthreads(16,16,1)]
+void add (uint3 id : SV_DispatchThreadID)
+{
+    uint index = id.x + id.y * size;
+    float2 v = float2(id.x * 1.0 / (size - 1), id.y * 1.0 / (size - 1));
+    
+    float value = values[index];
+    
+    float y = 1 - step(size / 2, id.y);
+    float x = step(size / 2, id.x);
+    float q = y * 2 + x;
+    
+    
+    float addvalue    = 0;
+    float removevalue = 0;
+//  Add
+    for(int i = 0; i < substeps2; i++)
+    {
+        float4 c      = brushes[i];
+        float  d      = length(c.xy - v) * 60;
+        float  brushQ = step(abs(c.w - q), .1);
+               d      = 1 - saturate(d);
+        addvalue    = max(addvalue, d * max(0, c.z) * brushQ);
+        removevalue = max(removevalue, d * max(0, -c.z) * brushQ);  //- .75
+    }
+    
+    value = max(value, addvalue);
+    value *= 1 - removevalue;
+    
+    values[index] = value;
+}
+
+
+[numthreads(16,16,1)]
+void count (uint3 id : SV_DispatchThreadID)
+{
+    uint  index = id.x + id.y * size;
+    float value = step(.1, values[index]);
+    
+    float maskValue = tex2Dlod(mask, float4(id.x * 1.0 / (size - 1), id.y * 1.0 / (size - 1), 0, 0)).x;
+    
+    InterlockedAdd(ValueCounter[0], value * 256);
+    InterlockedAdd(ValueCounter[1], value * maskValue * 256);
+    InterlockedAdd(ValueCounter[2], maskValue * 256);
+}
+
+
+[numthreads(16,16,1)]
+void update (uint3 id : SV_DispatchThreadID)
+{
+    uint index = id.x + id.y * size;
+    float value       = values[index];
+    float smoothvalue = lerp(smoothvalues[index], value, dt * 16);
+    smoothvalues[index] = smoothvalue;
+    
+    rT[id.xy] = 1 - smoothvalue.xxxx;
+}
